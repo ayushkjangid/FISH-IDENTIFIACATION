@@ -1,0 +1,14 @@
+# Netlify configuration for the Frontend subdirectory
+
+[build]
+  # The path to your build command
+  command = "npm run build"
+  
+  # The directory that contains the deploy-ready assets after compiling
+  publish = "dist"
+
+# Single-page application (SPA) redirect rule
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
