@@ -1,7 +1,6 @@
 fastapi
 uvicorn
-tensorflow-cpu
-numpy
+tensorflow
 pillow
 python-multipart
-ultralytics
+numpy
