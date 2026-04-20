@@ -32,7 +32,7 @@ if (cluster.isPrimary) {
 } else {
   // ✅ Middleware
   app.use(cors({
-    origin: ["http://localhost:5173"], // Allow your React frontend
+    origin: ["http://localhost:5173", "https://aaides.netlify.app"], // Allow your React frontend
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   }));
