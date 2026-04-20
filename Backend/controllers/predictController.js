@@ -16,7 +16,8 @@ export async function runPrediction(req, res) {
       contentType: req.file.mimetype,
     });
 
-    const response = await axios.post('http://localhost:8000/predict', formData, {
+    const mlServiceUrl = process.env.ML_SERVICE_URL || 'http://localhost:8000/predict';
+    const response = await axios.post(mlServiceUrl, formData, {
       headers: {
         ...formData.getHeaders(),
       },
@@ -31,7 +32,7 @@ export async function runPrediction(req, res) {
     const prediction = new Prediction({
       userId: req.user.id,
       filename: uniqueFilename,
-      fileUrl: `http://localhost:5000/${targetPath}`, // Save full URL
+      fileUrl: `${process.env.BACKEND_URL || 'http://localhost:5000'}/${targetPath}`, // Dynamic base URL
       species: response.data.label || response.data.Predicted_Class,
       confidence: response.data.confidence || response.data["Confidence (%)"],
     });
