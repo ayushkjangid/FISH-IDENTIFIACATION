@@ -1,0 +1,25 @@
+.detect-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.upload-area {
+  margin-top: 20px;
+  border: 2px dashed #0077b6;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.preview {
+  width: 300px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
