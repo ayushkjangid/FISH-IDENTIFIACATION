@@ -1,0 +1,12 @@
+# Render Blueprint for the ML Service
+
+services:
+  - type: web
+    name: fish-id-ml-service
+    env: python
+    # Root directory for the ML service
+    rootDir: ML_Service
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    # Note: ML Service is heavy, may need more than 512MB RAM
+    plan: free 
